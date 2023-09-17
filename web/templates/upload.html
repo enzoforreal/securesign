@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SecureSign - Signature électronique</title>
+</head>
+
+<body>
+    <h1>Signature électronique de documents</h1>
+    <form action="/sign-document" method="POST" enctype="multipart/form-data">
+        <label for="document">Téléchargez le document à signer :</label>
+        <input type="file" name="document" accept=".pdf, .docx">
+        <label for="signer">Nom du signataire :</label>
+        <input type="text" name="signer">
+        <button type="submit">Signer</button>
+    </form>
+</body>
+
+</html>
