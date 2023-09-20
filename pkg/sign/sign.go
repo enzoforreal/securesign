@@ -124,3 +124,4 @@ func retrieveDocumentFromDatabase(id int) (*Document, error) {
 
     return nil, errors.New("Document non trouvé")
 }
+
