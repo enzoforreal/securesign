@@ -1,30 +1,28 @@
 package pdfsign
 
 import (
+	"errors"
 	"os"
 
-	"github.com/digitorus/pdf"
+	"github.com/digitorus/pdfsign/verify"
 )
 
-func VerifyPDF(input string) bool {
+func VerifyPDF(input string) (bool, *verify.Response, error) {
 	inputFile, err := os.Open(input)
 	if err != nil {
-		return false
+		return false, nil, err
 	}
 	defer inputFile.Close()
 
-	fileInfo, err := inputFile.Stat()
+	apiResp, err := verify.File(inputFile)
 	if err != nil {
-		return false
+		return false, nil, err
 	}
 
-	rdr, err := pdf.NewReader(inputFile, fileInfo.Size())
-	if err != nil {
-		return false
+	if apiResp.Error != "" {
+		return false, apiResp, errors.New(apiResp.Error)
 	}
 
-	// Here we'd use the library's verification function. This is a placeholder.
-	// TODO: Integrate the actual verification function from the "digitorus pdfsign" library.
-
-	return true // This would depend on the library's verification result
+	isValid := len(apiResp.Signers) > 0 && apiResp.Signers[0].ValidSignature
+	return isValid, apiResp, nil
 }

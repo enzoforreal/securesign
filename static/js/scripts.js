@@ -1,33 +1,55 @@
 function uploadPDF() {
-    let fileInput = document.getElementById('pdf-upload');
-    let formData = new FormData();
-    formData.append('pdf', fileInput.files[0]);
+    const fileInput = document.getElementById('pdf-upload');
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert('Veuillez sélectionner un fichier PDF à uploader.');
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('pdf', file);
 
     fetch('/upload', {
         method: 'POST',
         body: formData
     })
-    .then(response => response.text())
-    .then(data => alert(data))
-    .catch(error => alert("Erreur lors de l'upload: " + error));
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
 }
 
 function signPDF() {
-    let filename = document.getElementById('pdf-name').value;
+    const pdfName = document.getElementById('pdf-name').value;
 
-    fetch('/sign', {
+    if (!pdfName) {
+        alert('Veuillez entrer le nom du fichier PDF à signer.');
+        return;
+    }
+
+    fetch(`/sign?filename=${pdfName}`, {
         method: 'POST',
-        body: JSON.stringify({ filename: filename }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
     })
-    .then(response => response.text())
-    .then(data => alert(data))
-    .catch(error => alert("Erreur lors de la signature: " + error));
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
 }
 
 function downloadPDF() {
-    let filename = document.getElementById('signed-pdf-name').value;
-    window.location.href = "/download/" + filename;
+    const signedPdfName = document.getElementById('signed-pdf-name').value;
+
+    if (!signedPdfName) {
+        alert('Veuillez entrer le nom du fichier PDF signé à télécharger.');
+        return;
+    }
+
+    window.open(`/download/${signedPdfName}`, '_blank');
 }

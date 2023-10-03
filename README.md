@@ -11,18 +11,5 @@ GenSecureSign est une application de signature électronique conçue pour permet
 - **Horodatage et Intégrité** : Assurez-vous de l'intégrité des documents signés grâce à l'horodatage.
 - **Sécurité Avancée** : Vos données sont cryptées et protégées à l'aide de technologies de sécurité avancées.
 
-## Comment Démarrer
-
-### Prérequis
-
-- Go (Golang)
-- Base de données MySQL ou MariaDB
-
-### Installation
-
-1. Clonez ce dépôt sur votre machine :
-   ```bash
-   git clone https://github.com/votre-utilisateur/GenSecureSign.git
-# gensecuresign
 
 

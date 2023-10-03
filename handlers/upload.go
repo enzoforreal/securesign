@@ -1,4 +1,4 @@
-package api
+package handlers
 
 import (
 	"net/http"
@@ -7,12 +7,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const uploadDirectory = "./static/storage/uploads"
-
 func UploadHandler(c *gin.Context) {
 	file, err := c.FormFile("pdf")
 	if err != nil {
 		c.String(http.StatusBadRequest, "Erreur lors du téléchargement du fichier: %v", err)
+		return
+	}
+
+	if !isValidFilename(file.Filename) {
+		c.String(http.StatusBadRequest, "Nom de fichier non valide.")
 		return
 	}
 
@@ -22,5 +25,8 @@ func UploadHandler(c *gin.Context) {
 		return
 	}
 
-	c.String(http.StatusOK, "Fichier téléchargé avec succès!")
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Fichier téléchargé avec succès!",
+	})
+
 }
