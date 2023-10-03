@@ -25,7 +25,7 @@ SecureSign est une plateforme robuste de signature électronique. Elle est conç
 
 ## Installation et Configuration
 
-La mise en place et la configuration de GenSecureSign nécessitent un environnement GoLang. Assurez-vous d'avoir également les dépendances nécessaires, telles que `gin-gonic/gin` et `digitorus/pdf`.
+La mise en place et la configuration de genSecureSign nécessitent un environnement GoLang. Assurez-vous d'avoir également les dépendances nécessaires, telles que `gin-gonic/gin` et `digitorus/pdf`.
 
 - Clonez le répertoire.
 - Installez les dépendances.
