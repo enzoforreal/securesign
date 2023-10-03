@@ -1,6 +1,6 @@
-# GenSecureSign - Signature Électronique Sécurisée
+# SecureSign - Signature Électronique Sécurisée
 
-GenSecureSign est une plateforme robuste de signature électronique. Elle est conçue pour faciliter la signature numérique de documents tout en assurant leur sécurité, leur authenticité et leur conformité légale.
+SecureSign est une plateforme robuste de signature électronique. Elle est conçue pour faciliter la signature numérique de documents tout en assurant leur sécurité, leur authenticité et leur conformité légale.
 
 ## Fonctionnalités
 
