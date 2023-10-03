@@ -26,28 +26,3 @@ GenSecureSign est une application de signature électronique conçue pour permet
 # gensecuresign
 
 
-nom_du_projet/
-├── api/
-│   ├── handlers/
-│   │   ├── upload.go           # Gère l'upload des PDF
-│   │   ├── sign.go             # Gère la signature des PDF
-│   │   └── download.go         # Gère le téléchargement des PDF signés
-│   ├── middleware/
-│   │   ├── auth.go             # Middleware pour l'authentification (si nécessaire)
-│   │   └── logging.go          # Middleware pour le logging des requêtes
-│   └── routes.go               # Définition des routes/endpoints de l'API
-├── pdfsign/
-│   ├── signer.go               # Fonctionnalités liées à la signature PDF (basé sur le README)
-│   └── verifier.go             # Fonctionnalités pour vérifier un PDF signé (si nécessaire)
-├── static/
-│   ├── css/
-│   │   └── styles.css          # Styles de votre interface utilisateur
-│   ├── js/
-│   │   └── scripts.js          # Scripts de votre interface utilisateur
-│   └── index.html              # Page principale de votre interface utilisateur
-├── storage/
-│   ├── uploads/                # Dossier pour stocker les PDF téléchargés
-│   └── signed/                 # Dossier pour stocker les PDF signés
-├── main.go                     # Point d'entrée de votre application
-├── go.mod                      # Fichier de module Go
-└── go.sum                      # Fichier de somme de contrôle Go
