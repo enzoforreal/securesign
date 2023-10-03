@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js" defer></script>
+    <title>Signature de PDF</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Signature de PDF</h1>
+        
+        <section id="upload-section">
+            <h2>Uploader un PDF</h2>
+            <input type="file" id="pdf-upload" accept=".pdf">
+            <button onclick="uploadPDF()">Uploader</button>
+        </section>
+        
+        <section id="sign-section">
+            <h2>Signer un PDF</h2>
+            <label for="pdf-name">Nom du fichier PDF:</label>
+            <input type="text" id="pdf-name">
+            <button onclick="signPDF()">Signer</button>
+        </section>
+        
+        <section id="download-section">
+            <h2>Télécharger le PDF signé</h2>
+            <label for="signed-pdf-name">Nom du fichier PDF:</label>
+            <input type="text" id="signed-pdf-name">
+            <button onclick="downloadPDF()">Télécharger</button>
+        </section>
+    </div>
+</body>
+</html>
