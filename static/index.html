@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="/static/js/scripts.js" defer></script>
-    <title>Signature de PDF</title>
+    <title>Securesign</title>
 </head>
-
-<body>
-    <div class="container">
-        <h1>Signature de PDF</h1>
-
-        <!-- Ajoutez le lien ici -->
-        <section id="empty-pdf-section">
+<body class="bg-light">
+    <div class="container my-5">
+        <h1 class="mb-5 text-center">Securesign</h1>
+       
+        <section class="mb-5">
             <h2>Récupérer un PDF vide</h2>
-            <a href="/empty-pdf" download>Télécharger le PDF vide</a>
+            <a href="/empty-pdf" download class="btn btn-primary">Télécharger le PDF vide</a>
         </section>
 
-        <section id="upload-section">
+        
+        <section class="mb-5">
             <h2>Uploader un PDF</h2>
-            <input type="file" id="pdf-upload" accept=".pdf">
-            <button onclick="uploadPDF()">Uploader</button>
+            <div class="custom-file mb-3">
+                <input type="file" class="custom-file-input" id="pdf-upload" accept=".pdf">
+                <label class="custom-file-label" for="pdf-upload">Choisir un fichier</label>
+            </div>
+            <button onclick="uploadPDF()" class="btn btn-success">Uploader</button>
         </section>
 
-        <section id="sign-section">
+        
+        <section class="mb-5">
             <h2>Signer un PDF</h2>
-            <label for="pdf-name">Nom du fichier PDF:</label>
-            <input type="text" id="pdf-name">
-            <button onclick="signPDF()">Signer</button>
+            <div class="form-group">
+                <label for="pdf-name">Nom du fichier PDF:</label>
+                <input type="text" id="pdf-name" class="form-control">
+            </div>
+            <button onclick="signPDF()" class="btn btn-warning">Signer</button>
         </section>
 
-        <section id="download-section">
+        
+        <section>
             <h2>Télécharger le PDF signé</h2>
-            <label for="signed-pdf-name">Nom du fichier PDF:</label>
-            <input type="text" id="signed-pdf-name">
-            <button onclick="downloadPDF()">Télécharger</button>
+            <div class="form-group">
+                <label for="signed-pdf-name">Nom du fichier PDF:</label>
+                <input type="text" id="signed-pdf-name" class="form-control">
+            </div>
+            <button onclick="downloadPDF()" class="btn btn-info">Télécharger</button>
         </section>
     </div>
-</body>
 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

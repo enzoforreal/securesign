@@ -31,3 +31,5 @@ La mise en place et la configuration de SecureSign nécessitent un environnement
 - Installez les dépendances.
 - Configurez vos chemins pour les certificats et clés privées.
 - Exécutez l'application et commencez à signer!
+
+![Interface de l'Application](./static/images/interface_test.png)
