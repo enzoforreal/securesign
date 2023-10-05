@@ -2,6 +2,8 @@
 
 SecureSign est une plateforme robuste de signature électronique. Elle est conçue pour faciliter la signature numérique de documents tout en assurant leur sécurité, leur authenticité et leur conformité légale.
 
+![Interface de l'Application](./static/images/interface_test.png)
+
 ## Fonctionnalités
 
 - **Signature Électronique Légale** : Utilisez notre infrastructure pour signer vos documents électroniquement tout en respectant les normes et réglementations en vigueur. Chaque signature est accompagnée de métadonnées pour assurer sa traçabilité.
@@ -32,4 +34,4 @@ La mise en place et la configuration de SecureSign nécessitent un environnement
 - Configurez vos chemins pour les certificats et clés privées.
 - Exécutez l'application et commencez à signer!
 
-![Interface de l'Application](./static/images/interface_test.png)
+
